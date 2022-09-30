@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new cgpa
+    </title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <br><br>
+    <h1 align="center">CGPA CALCULATOR</h1>
+    <div class="parent-container">
+        
+        <div class="container">
+            <h2>SUBJECTS</h2>
+            <label for="s1">Subject 1 Grade Point :</label><input  id="s1" type="number">
+            <label for="cd1">Credits </label><input  id="cd1" type="number">
+            <br><br>
+            <label for="s2">Subject 2 Grade Point  :</label><input  id="s2" type="number">
+            <label for="cd2">Credits </label><input  id="cd2" type="number">
+            <br><br>
+            <label for="s3">Subject 3 Grade Point  :</label><input  id="s3" type="number">
+            <label for="cd3">Credits </label><input  id="cd3" type="number">
+            <br><br>
+            <label for="s4">Subject 4 Grade Point  :</label><input  id="s4" type="number">
+            <label for="cd4">Credits </label><input  id="cd4" type="number">
+            <br><br>
+            <label for="s5">Subject 5 Grade Point  :</label><input  id="s5" type="number">
+            <label for="cd5">Credits </label><input  id="cd5" type="number">
+            <br><br>
+        
+        
+            <h2>LABORATORY</h2>
+            <label for="ls1">Lab 1 Grade Point  :</label><input  id="ls1" type="number">
+            <label for="lcd1">Credits </label><input  id="lcd1" type="number">
+            <br><br>
+            <label for="ls2">Lab 2 Grade Point  :</label><input  id="ls2" type="number">
+            <label for="lcd2">Credits </label><input  id="lcd2" type="number">
+            <br><br>
+            <label for="ls3">Lab 3 Grade Point  :</label><input  id="ls3" type="number">
+            <label for="lcd3">Credits </label><input  id="lcd3" type="number">
+            <br><br>
+        
+        
+            <button id="res" onclick="calc()">CALCULATE</button>
+
+            <h3 id="gpa">CURRENT SEMESTER GPA : </h3>
+            <br>
+            <label>Enter Previous Semester CGPA :</label><input id="cgpa-input" type="number"><button id="cgpa-btn">CALCULATE</button>
+            <h3 id="cgpa">YOUR CURRENT CGPA : </h3>
+        
+        </div>
+
+
+    </div>
+
+    <script>
+        // function calculate(){
+//     var cgpa = parseFloat(document.getElementById("cgpa").value);
+//     var gpa = parseFloat(document.getElementById("gpa").value);
+//     var res = (cgpa+gpa)/2;
+//  document.getElementById("res").innerHTML= res;
+// }
+
+var result=0;
+function calc(){
+
+    var cd1=document.querySelector("#cd1").value;
+    var cd2=document.querySelector("#cd2").value;
+    var cd3=document.querySelector("#cd3").value;
+    var cd4=document.querySelector("#cd4").value;
+    var cd5=document.querySelector("#cd5").value;
+    var lcd1=document.querySelector("#lcd1").value;
+    var lcd2=document.querySelector("#lcd1").value;
+    var lcd3=document.querySelector("#lcd3").value;
+
+    var s1 = document.querySelector("#s1").value;
+    var s2 = document.querySelector("#s2").value;
+    var s3 = document.querySelector("#s3").value;
+    var s4 = document.querySelector("#s4").value;
+    var s5 = document.querySelector("#s5").value;
+    var ls1 = document.querySelector("#ls1").value;
+    var ls2 = document.querySelector("#ls2").value;
+    var ls3 = document.querySelector("#ls3").value;
+
+    
+    
+
+    var tot_cd = parseFloat(cd1)+parseFloat(cd2)+parseFloat(cd3)+parseFloat(cd4)+parseFloat(cd5)+parseFloat(lcd1)+parseFloat(lcd2)+parseFloat(lcd3);
+    var avg_sub = ((parseFloat(s1)+parseFloat(s2)+parseFloat(s3)+parseFloat(s4)+parseFloat(s5)+parseFloat(ls1)+parseFloat(ls1)+parseFloat(ls1))/8)
+    
+    console.log(cd1);
+    console.log(tot_cd);
+    console.log(avg_sub);
+    result = (tot_cd*avg_sub)/tot_cd; 
+    console.log(result);
+    var gpa = document.querySelector("#gpa").innerText += " "+ result;  
+    console.log(gpa);
+
+    
+}
+
+
+
+document.querySelector("#cgpa-btn").addEventListener("click",cgpa_calc);
+
+function cgpa_calc() {
+    var cgpa = document.querySelector("#cgpa-input").value;
+    console.log(result);
+    var c_cgpa = (parseFloat(cgpa)+result)/2;
+    document.querySelector("#cgpa").innerText +="  "+c_cgpa;
+}
+
+
+    
+    
+    
+
+
+
+
+
+
+    </script>
+    <!-- <script src="jj.js"></script> -->
+</body>
+</html>
